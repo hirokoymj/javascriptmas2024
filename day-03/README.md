@@ -19,6 +19,8 @@ const hackedEmojis = {
 
 Example input: ":cry:"
 Example output: ‍😄
+Example input: "Just read your article :thumbsdown:"
+Example output: "Just read your article 👏"
 
 ## Solution
 
