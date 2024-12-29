@@ -1,20 +1,53 @@
-// Get references to DOM elements
 const itemInput = document.getElementById("item-input");
 const addItemButton = document.getElementById("add-item-button");
 const shoppingList = document.getElementById("shopping-list");
 const listArr = [];
 
-// Function to check item is not duplicate
+/*
+- "talking picture frames"
+- "talking  picture frames"
+- "talking picture    frames"
+- " talking picture frames "
+*/
+
+//---ORG
+// function checkDuplicate() {
+//   const formatted = itemInput.value.trim().replace(/\s+/, " ");
+//   const found = listArr.includes(formatted);
+//   const itemText = itemInput.value;
+//   if (!found) listArr.push(itemText);
+//   renderList();
+// }
+
+//
+
 function checkDuplicate() {
-  /* ⚠️ You need to add code to this function! ⚠️*/
-  const formatted = itemInput.value.trim().replace(/\s+/, " ");
-  const found = listArr.includes(formatted);
-  const itemText = itemInput.value;
-  if (!found) listArr.push(itemText);
+  const itemText = itemInput.value.trim().replace(/\s+/g, " ");
+  const isExist = listArr.some((d) => d.toLowerCase() === itemText);
+
+  if (!isExist) {
+    listArr.push(itemText);
+  } else {
+    alert("the item is already exists in the list");
+  }
   renderList();
 }
 
-// Function to add an item to the shopping list
+///---Sample
+function checkDuplicate() {
+  const itemText = itemInput.value.trim().replace(/\s+/g, " ");
+  const exitInList = listArr.some(
+    (item) => item.toLowerCase() === itemText.toLowerCase()
+  );
+  if (!exitInList) {
+    listArr.push(itemText);
+  } else {
+    alert(`${itemText.toUpperCase()} already exists in the list.`);
+  }
+
+  renderList();
+}
+
 function renderList() {
   shoppingList.innerHTML = "";
   listArr.forEach((gift) => {
@@ -25,10 +58,8 @@ function renderList() {
   itemInput.value = ""; // Clear the input field
 }
 
-// Add event listener to button
 addItemButton.addEventListener("click", checkDuplicate);
 
-// Allow adding items by pressing Enter key
 itemInput.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
     checkDuplicate();
