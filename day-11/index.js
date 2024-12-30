@@ -1,9 +1,7 @@
-const emojis = ["🎄", "🎁", "🎅", "☃️"]; // Your set of emojis
-const emojiArray = [...emojis, ...emojis];
-
-const container = document.getElementById("game-board");
+let emojiArray = [];
 let revealedCards = [];
 let matchedCards = 0;
+const container = document.getElementById("game-board");
 
 function flipCard(e) {
   const clickedCard = e.target;
@@ -26,7 +24,7 @@ function flipCard(e) {
       revealedCards = [];
       matchedCards += 2;
       if (matchedCards === emojiArray.length) {
-        alert("alert");
+        alert("game over");
       }
     } else {
       // Hide the cards after a short delay
@@ -45,13 +43,31 @@ function flipCard(e) {
   }
 }
 
-while (emojiArray.length > 0) {
-  const randomIndex = Math.floor(Math.random() * emojiArray.length);
-  const removedEmoji = emojiArray.splice(randomIndex, 1)[0];
-  //gameBorder.innerHTML += `<div class="card">${removedEmoji}</div>`
-  const card = document.createElement("div");
-  card.classList.add("card", "hidden");
-  card.dataset.emoji = removedEmoji;
-  card.addEventListener("click", flipCard);
-  container.appendChild(card);
+function generateEmojis() {
+  const emojis = ["🎄", "🎁", "🎅", "☃️"];
+  return [...emojis, ...emojis];
 }
+
+function renderCards(emojis) {
+  emojis.map((emoji) => {
+    const card = document.createElement("div");
+    card.classList.add("card", "hidden");
+    card.dataset.emoji = emoji;
+    card.addEventListener("click", flipCard);
+    container.appendChild(card);
+  });
+}
+
+// // Suffles the cards randomly
+function shuffleCards(arr) {
+  return arr.sort(() => Math.random() - 0.5);
+}
+
+const initGame = () => {
+  matchedCards = 0;
+  revealedCards = [];
+  emojiArray = shuffleCards(generateEmojis());
+  renderCards(emojiArray);
+};
+
+initGame();
