@@ -33,7 +33,7 @@ const toyCompany = {
 };
 ```
 
-## Solution
+## Solution #1
 
 ```js
 const findEmployee = (name) => {
@@ -47,6 +47,20 @@ const findEmployee = (name) => {
     }
   }
   return `not found`;
+};
+```
+
+## Solution #2
+
+```js
+const findName = (name) => {
+  Object.values(toyCompany).forEach((team) => {
+    Object.values(team).forEach((department) => {
+      Object.values(department).forEach((role) => {
+        console.log(role);
+      });
+    });
+  });
 };
 ```
 

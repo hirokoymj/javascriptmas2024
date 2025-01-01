@@ -25,22 +25,31 @@ const toyCompany = {
   },
 };
 
-const findEmployee = (name) => {
-  for (const team in toyCompany) {
-    for (const department in toyCompany[team]) {
-      for (const role in toyCompany[team][department]) {
-        if (name === toyCompany[team][department][role]) {
-          return `Found ${name}`;
-        }
-      }
-    }
-  }
-  return `not found`;
+const findName = (name) => {
+  Object.values(toyCompany).forEach((team) => {
+    Object.values(team).forEach((department) => {
+      Object.values(department).forEach((role) => {
+        console.log(role);
+      });
+    });
+  });
 };
 
-console.log(findEmployee("Todd"));
+findName("Todd");
 
-console.log(findEmployee("Hiroko"));
+// const findEmployee = (name) => {
+//   for (const team in toyCompany) {
+//     for (const department in toyCompany[team]) {
+//       for (const role in toyCompany[team][department]) {
+//         if (name === toyCompany[team][department][role]) {
+//           return `Found ${name}`;
+//         }
+//       }
+//     }
+//   }
+//   return `not found`;
+// };
 
-///https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return
-//The return statement ends function execution and specifies a value to be returned to the function caller.
+// console.log(findEmployee("Todd"));
+
+// console.log(findEmployee("Hiroko"));
