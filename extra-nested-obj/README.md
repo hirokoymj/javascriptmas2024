@@ -64,6 +64,65 @@ const findName = (name) => {
 };
 ```
 
+## transform #1
+
+```js
+const toyCompany2 = {
+  redTeam: ["Dan", "Steve", "Larry", "Linda", "Tony", "Matt"],
+  blueTeam: ["Stacy", "Kevin", "Robbie", "Todd", "Jess", "Nick"],
+};
+```
+
+```js
+const toyCompany2 = {};
+
+for (const team in toyCompany) {
+  toyCompany2[team] = [];
+  for (const department in toyCompany[team]) {
+    for (const role in toyCompany[team][department]) {
+      toyCompany2[team].push(toyCompany[team][department][role]);
+    }
+  }
+}
+console.log(toyCompany2);
+
+// const toyCompany2 = {
+//   redTeam: ["Dan", "Steve", "Larry", "Linda", "Tony", "Matt"],
+//   blueTeam: ["Stacy", "Kevin", "Robbie", "Todd", "Jess", "Nick"],
+// };
+```
+
+## transform #3
+
+```js
+Object.entries(toyCompany).map(([team, teams]) => {
+  Object.entries(teams).map(([department, departments]) => {
+    Object.entries(departments).map(([role, name]) => {
+      console.log(name);
+    });
+  });
+});
+```
+
+## Transform #4
+
+```js
+const output = Object.entries(toyCompany).reduce((acc, [team, teams]) => {
+  acc[team] = ["test"]; ///<--- acc must initialize here.
+  Object.entries(teams).forEach(([department, departments]) => {
+    Object.entries(departments).forEach(([role, name]) => {
+      acc[team].push(name);
+    });
+  });
+  return acc;
+}, {});
+
+// const output = {
+//   redTeam: ["Dan", "Steve", "Larry", "Linda", "Tony", "Matt"],
+//   blueTeam: ["Stacy", "Kevin", "Robbie", "Todd", "Jess", "Nick"],
+// };
+```
+
 <hr />
 
 ### Access object data

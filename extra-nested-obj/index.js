@@ -25,31 +25,30 @@ const toyCompany = {
   },
 };
 
-const findName = (name) => {
-  Object.values(toyCompany).forEach((team) => {
-    Object.values(team).forEach((department) => {
-      Object.values(department).forEach((role) => {
-        console.log(role);
-      });
-    });
-  });
-};
-
-findName("Todd");
-
-// const findEmployee = (name) => {
-//   for (const team in toyCompany) {
-//     for (const department in toyCompany[team]) {
-//       for (const role in toyCompany[team][department]) {
-//         if (name === toyCompany[team][department][role]) {
-//           return `Found ${name}`;
-//         }
-//       }
-//     }
-//   }
-//   return `not found`;
+// const toyCompany2 = {
+//   redTeam: ["Dan", "Steve", "Larry", "Linda", "Tony", "Matt"],
+//   blueTeam: ["Stacy", "Kevin", "Robbie", "Todd", "Jess", "Nick"],
 // };
 
-// console.log(findEmployee("Todd"));
+const output = Object.entries(toyCompany).reduce((acc, [team, teams]) => {
+  acc[team] = [];
+  Object.entries(teams).forEach(([department, departments]) => {
+    Object.entries(departments).forEach(([role, name]) => {
+      acc[team].push(name);
+    });
+  });
+  return acc;
+}, {});
 
-// console.log(findEmployee("Hiroko"));
+console.log(output);
+
+const toyCompany2 = Object.entries(toyCompany).reduce(
+  (acc, [team, departments]) => {
+    acc[team] = [];
+    acc[team].push("a");
+    return acc;
+  },
+  {}
+);
+
+//console.log(toyCompany2);
