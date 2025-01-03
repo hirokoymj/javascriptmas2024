@@ -81,3 +81,5 @@ const object1 = {
 console.log(Object.values(object1));
 // Expected output: Array ["somestring", 42, false]
 ```
+
+https://github.com/mendezpvi/javascriptmas-2024
