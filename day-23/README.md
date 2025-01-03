@@ -15,9 +15,11 @@ The original array looked like this:
 
 - Do this without creating a new array and using no array methods other than .forEach().
 
+```js
 const santasArr = ['James', 'Yi', 'Grinch', 'Fatima', 'Tariq', 'Grinch', 'Clare', 'Grinch']
 const missingNamesArr = ['Florinda', 'Jose', 'Gibbs']
 Expected Output: ['James', 'Yi', 'Florinda', 'Fatima', 'Tariq', 'Jose', 'Clare', 'Gibbs']
+```
 
 ## Solution #1
 
