@@ -11,12 +11,15 @@
 - [Day 7 - GiftChain](./day-07/README.md)
 - [Day 8 - Save the Snowman!](./day-07/README.md)
 - [Day 9 - Grampa's Recipes](./day-09/README.md)
+- Day 10 - Xmas Flag in CSS
 - [Day 11 - Xmas Matching Game](./day-13/README.md)
 - [Day 13 - Santas Change!](./day-13/README.md)
 - [Day 14 - Build Norhgram](./day-14/)
+- Day 15 - JIngle Bills
 - [Day 16 - Find the Naughty Elf](./day-16/README.md)
 - [Day 18 - The cost of xmas](./day-18/README.md)
 - [Day 19 - Holiday Gift Shopping](./day-19/README.md)
+- Day 20 - Elf Names Generator
 - [Day 21 - Santa's Data Analysis ](./day-21/README.md)
 - [Day 22 - Xmas Label Maker](./day-22/README.md)
 - [Day 23 - Santa got hacked!](./day-23/README.md)
