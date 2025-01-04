@@ -1,4 +1,4 @@
-const toyCompany = {
+export const toyCompany = {
   redTeam: {
     production: {
       redProdManager: "Dan",

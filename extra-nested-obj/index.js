@@ -1,72 +1,49 @@
-const toyCompany = {
-  redTeam: {
-    production: {
-      redProdManager: "Dan",
-      redWorkerOne: "Steve",
-      redWorkerTwo: "Larry",
-    },
-    sales: {
-      redSalesManager: "Linda",
-      redSalesOne: "Tony",
-      redSalesTwo: "Matt",
-    },
-  },
-  blueTeam: {
-    production: {
-      blueProdManager: "Stacy",
-      blueworkerOne: "Kevin",
-      blueWorkerTwo: "Robbie",
-    },
-    sales: {
-      blueSalesManager: "Todd",
-      blueSalesOne: "Jess",
-      blueSalesTwo: "Nick",
-    },
-  },
-};
+import { toyCompany } from "./data.js";
 
+// Transform
 // const toyCompany2 = {
 //   redTeam: ["Dan", "Steve", "Larry", "Linda", "Tony", "Matt"],
 //   blueTeam: ["Stacy", "Kevin", "Robbie", "Todd", "Jess", "Nick"],
 // };
 
-//const toyCompany2 = {};
-
+///---Ex #1
+const toyCompany1 = [];
 for (const team in toyCompany) {
-  toyCompany2[team] = [];
+  toyCompany1[team] = [];
   for (const department in toyCompany[team]) {
     for (const employee in toyCompany[team][department]) {
-      toyCompany2[team].push(toyCompany[team][department][employee]);
+      toyCompany1[team].push(toyCompany[team][department][employee]);
     }
   }
 }
+console.log(toyCompany1);
 
-console.log(toyCompany2);
+///---Ex #1
+Object.keys(toyCompany).forEach((team) => {
+  const output = Object.values(team).reduce((acc, department) => {
+    Object.values(department).forEach((role) => {
+      console.log(team);
+      acc[team] = "";
 
-// Object.keys(toyCompany).forEach((team) => {
-//   const output = Object.values(team).reduce((acc, department) => {
-//     Object.values(department).forEach((role) => {
-//       console.log(team);
-//       acc[team] = "";
+      return acc;
+    });
+  }, {});
+});
 
-//       return acc;
-//     });
-//   }, {});
-// });
+const findName = (name) => {
+  Object.values(toyCompany).forEach((team) => {
+    Object.values(team).forEach((department) => {
+      Object.values(department).forEach((role) => {
+        console.log(role);
+      });
+    });
+  });
+};
 
-// const findName = (name) => {
-//   Object.values(toyCompany).forEach((team) => {
-//     Object.values(team).forEach((department) => {
-//       Object.values(department).forEach((role) => {
-//         console.log(role);
-//       });
-//     });
-//   });
-// };
+findName("Todd");
 
-// findName("Todd");
-
-const toyCompany2 = Object.entries(toyCompany).reduce(
+/// Ex #3
+const toyCompany3 = Object.entries(toyCompany).reduce(
   (acc, [team, departments]) => {
     acc[team] = [];
     acc[team].push("a");
@@ -75,4 +52,4 @@ const toyCompany2 = Object.entries(toyCompany).reduce(
   {}
 );
 
-//console.log(toyCompany2);
+console.log(toyCompany3);

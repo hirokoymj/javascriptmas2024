@@ -1,0 +1,12 @@
+{
+  "name": "day-22",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Writing out labels by hand is a real pain. Luckily, you are so organised that you have all of your contacts saved in an array.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

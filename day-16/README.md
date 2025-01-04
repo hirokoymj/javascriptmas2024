@@ -44,30 +44,27 @@ const newArray = workshopData.map((data) => ({
   }, {}),
 }));
 console.log(newArray);
+// [
+//   {
+//     name: "Elf Tiberius III",
+//     totalShipped: { "Teddy Bear": 10, "Race Car": 5, Doll: 7 },
+//   },
+//   {
+//     name: "Elf Herbert Drinklater",
+//     totalShipped: { Puzzle: 15, Blocks: 20 },
+//   },
+//   {
+//     name: "Elf Kalvin Armadillo",
+//     totalShipped: { Drone: 1, Robot: 10 },
+//   },
+//   {
+//     name: "Elf Ernest Tinkerer",
+//     totalShipped: { "Board Game": 3, Doll: 18 },
+//   },
+// ];
 ```
 
-**OUTPUT**
-
-```js
-[
-  {
-    name: "Elf Tiberius III",
-    totalShipped: { "Teddy Bear": 10, "Race Car": 5, Doll: 7 },
-  },
-  {
-    name: "Elf Herbert Drinklater",
-    totalShipped: { Puzzle: 15, Blocks: 20 },
-  },
-  {
-    name: "Elf Kalvin Armadillo",
-    totalShipped: { Drone: 1, Robot: 10 },
-  },
-  {
-    name: "Elf Ernest Tinkerer",
-    totalShipped: { "Board Game": 3, Doll: 18 },
-  },
-];
-```
+## Reference
 
 - [Object.values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values)
 

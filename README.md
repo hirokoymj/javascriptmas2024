@@ -2,7 +2,9 @@
 
 - https://scrimba.com/javascriptmas-c0javascriptmas
 
-- [Day 1 - Grampa's Wishlist](./day-01/README.md)
+<hr />
+
+- [Day 1 - Grampa's Wishlist](./public/day01/README.md)
 - Day 2 - Ugly Advent Calendar
 - [Day 3 - Santa's Hacked Emoji](./day-03/README.md)
 - [Day 4 - Xmas Movie Emoji Quiz](./day-04/README.md)
@@ -23,3 +25,8 @@
 - [Day 21 - Santa's Data Analysis ](./day-21/README.md)
 - [Day 22 - Xmas Label Maker](./day-22/README.md)
 - [Day 23 - Santa got hacked!](./day-23/README.md)
+
+## Web server for Express.js
+
+- [Express.js - serving static files](https://expressjs.com/en/starter/static-files.html)
+- http://localhost:3000/day01/
