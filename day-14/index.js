@@ -1,20 +1,131 @@
-/*
-The cool people of Lapland are bored of traditional social media and have decided to build their own app called Northagram...and they need your help!
 
-This is how the app should work:
-- It displays circular avatars of the friends who have uploaded pictures lately. These avatars have a white border.
-- Underneath, it cycles through the friends' pictures displaying each for 1.5 seconds. (There's an animated snowman loading state before pictures load.)
-- While a friend's pictures are being displayed, that friend's avatar gets a red border.
-- This red border reverts to white when their pictures have finished being displayed.
-- When all of the images have been displayed, the user should see a message "Refresh to load latest images". All avatars should have a white border at this point.
 
-Stretch Goals for dedicated Social Media Engineers
+import { feedData } from "./data.js"
 
-- Add captions to the images.
-- Refactor your code to use generators!
-- Grey out the avatar after that friend's pictures have been displayed.
-- Make it so clicking on an image pauses the timer.
-- Add left and right arrow overlays to the image so users can scroll back and forth.
-*/
+const feedAvatarsEl = document.querySelector('.feed-avatars')
+const feedImagesEl = document.querySelector('.feed-images')
 
+function renderAvatars() {
+  // Generate the HTML for each avatar using the feedData array
+  feedAvatarsEl.innerHTML = feedData.map(avatar => {
+    return `<img src="./images/${avatar.avatarUrl}" alt="${avatar.handle} smiling at the camera." class="avatar">`
+  }).join('')
+}
+
+function renderImage(images) {
+
+  // Clear previous content
+  feedImagesEl.innerHTML = ''
+  feedImagesEl.innerHTML += `
+    <figure>
+      <img src="./images/${images.imageUrl}" alt="${images.alt}" class="feature-image">
+      <p class="feature-text">${images.alt}</p>
+    </figure>`
+}
+
+function renderHighlight(avatarIndex) {
+  const avatars = [...document.getElementsByClassName('avatar')] /* Convert HTMLCollection to an array */
+
+  avatars.forEach((avatar, index) => {
+    if (avatarIndex === index) {
+      avatar.classList.add('highlight')
+      avatar.style.opacity = 1
+    }
+    else {
+      avatar.classList.remove('highlight')
+      avatar.style.opacity = .5
+    }
+
+  })
+}
+
+// Handle the timer to switch images and highlight avatars
+function handleTimer() {
+  let avatarIndex = 0 /* Index of the current avatar */
+  let imgIndex = 0 /* Index of the current image */
+
+  const interval = setInterval(() => {
+
+    // Get the current avatar data
+    const currentAvatar = feedData[avatarIndex] 
+
+    // Get the current image of the avatar
+    const currentImage = currentAvatar.features[imgIndex]
+
+    // Render the featured image
+    renderImage(currentImage)
+
+    // Highlight the corresponding avatar
+    renderHighlight(avatarIndex)
+
+    // Move to the next image
+    imgIndex++
+
+    // If all images of the current avatar have been displayed
+    if (imgIndex >= currentAvatar.features.length) {
+      imgIndex = 0 /* Reset the image index */
+      avatarIndex++ /* Move the next avatar */
+    }
+
+    // If all avatars have been displayed, stop the timer
+    if (avatarIndex >= feedData.length) {
+      clearInterval(interval)
+      renderHighlight(-1) /* Remove avatar highlights */
+
+      // Display a message to the user
+      feedImagesEl.innerHTML = `<p class="ux-message">Refresh to load latest images</p>`
+    }
+
+  }, 1500) /* Change the image every 1.5s */
+}
+
+renderAvatars()
+handleTimer()
+
+
+
+
+
+
+/*----My ORG (1hr)----
 import { feedData } from './data.js'
+
+const avatarContainer = document.getElementsByClassName("feed-avatars");
+const imageContainer = document.getElementsByClassName("feed-images");
+let current = 0;
+
+const renderAvatars = () => {
+    const avatarHTML = feedData.map((data)=> {
+        let html = `<img src=${data.avatarUrl} class="feed-avatars" />`;
+        return html;
+    });
+    return avatarHTML.join("");
+}
+
+const renderImage = (id) => {
+    console.log("renderImage");
+    const found = feedData.find((data, index)=>{
+        if (index === id) return data}).features;
+    console.log(found);
+ 
+}
+
+console.log(renderImage(2));
+
+
+
+const initPage = () =>{
+    avatarContainer.innerHTML = renderAvatars();
+    
+}
+
+const handleTimer = (array) =>{
+    array.forEach((data) => setTimeout(
+        imageContainer.innterHTML = data
+    ), 3000);
+}
+
+/*----My ORG (1hr)----
+
+
+
