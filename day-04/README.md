@@ -47,8 +47,6 @@ console.log(months); // Array ["Jan", "March", "June"]
 
 - Display emoji selected at random from the array in data.js.
 - The emoji (🌇 💣 👮 ✈️ ️🔫) should print in console in five times.
-- Hint
-
   ```js
   //Genearte a random number
   Math.floor(Math.random * files.length);
