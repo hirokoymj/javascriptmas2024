@@ -40,3 +40,40 @@ const removed = months.splice(2, 1);
 console.log(removed); // Array ["April"]
 console.log(months); // Array ["Jan", "March", "June"]
 ```
+
+## Quiz
+
+**Q1**
+
+- Display emoji selected at random from the array in data.js.
+- The emoji (🌇 💣 👮 ✈️ ️🔫) should print in console in five times.
+  ```js
+  //Genearte a random number
+  Math.floor(Math.random * files.length);
+  // Remove an item from array
+  films.splice(randomIndex, 1);
+  ```
+
+**Q1-Answer**
+
+```js
+const copyFilms = [...films];
+
+const renderRandomEmoji = () => {
+  const randomIndex = Math.floor(Math.random() * copyFilms.length);
+
+  const emoji = copyFilms[randomIndex].emoji.join(" ");
+  console.log(emoji);
+  const removedItem = copyFilms.splice(randomIndex, 1);
+};
+
+let count = 0;
+const interval = setInterval(() => {
+  renderRandomEmoji();
+  count++;
+
+  if (count === 0) {
+    clearInterval(interval);
+  }
+}, 1500);
+```

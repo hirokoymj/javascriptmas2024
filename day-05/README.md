@@ -55,3 +55,15 @@ function findAnagrams(array) {
 (a<b) return -1 // acending order
 (a<b) return 1 // decending order
 ```
+- [MDN - Array.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
+```js
+const array1 = [1, 30, 4, 21, 100000];
+array1.sort((a, b) => a-b);
+console.log(array1);
+//Array [1, 4, 21, 30, 100000]
+```
+
+
+
+
