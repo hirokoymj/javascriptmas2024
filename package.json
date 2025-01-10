@@ -1,8 +1,9 @@
 {
   "name": "javascriptmas2024",
+  "type": "module",
   "version": "1.0.0",
   "description": "- https://scrimba.com/javascriptmas-c0javascriptmas",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

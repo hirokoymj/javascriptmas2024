@@ -25,3 +25,114 @@ Stretch Goals for dedicated Social Media Engineers
 [index.js](./index.js)
 
 ## Reference
+
+- [setInerval](https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval)
+- [setInterval - W3school](https://www.w3schools.com/jsreF/tryit.asp?filename=tryjsref_win_setinterval)
+
+- https://www.programiz.com/javascript/setInterval
+
+#### Example 1: Display a Text Once Every 1 Second
+
+```js
+// program to display a text using setInterval method
+function greet() {
+  console.log("Hello world");
+}
+
+setInterval(greet, 1000);
+```
+
+```js
+Hello world
+Hello world
+Hello world
+Hello world
+Hello world
+...
+```
+
+<hr />
+
+**Example 2: Display Time Every 5 Seconds**
+
+```js
+function showTime() {
+  // return new date and time
+  let dateTime = new Date();
+
+  // return the time
+  let time = dateTime.toLocaleTimeString();
+
+  console.log(time);
+}
+
+let display = setInterval(showTime, 5000);
+```
+
+```js
+"5:15:28 PM"
+"5:15:33 PM"
+"5:15:38 PM"
+....
+```
+
+#### Example 3: Use clearInterval() Method
+
+```js
+let count = 0;
+
+let interval = setInterval(function () {
+  count += 1;
+
+  if (count === 5) {
+    clearInterval(interval);
+  }
+
+  let dateTime = new Date();
+  let time = dateTime.toLocaleTimeString();
+  console.log(time);
+}, 2000);
+```
+
+```js
+4:47:41 PM
+4:47:43 PM
+4:47:45 PM
+4:47:47 PM
+4:47:49 PM
+```
+
+## Example 4 - two counter
+
+```js
+import { feedData } from "./data.js";
+
+function renderImage(image) {
+  let html = `<img src="./images/${image.imageUrl}" alt="${image.alt}" class="feature-image">`;
+  console.log(html);
+}
+
+function handleTimer() {
+  let avatarIndex = 0;
+  let imgIndex = 0;
+
+  const interval = setInterval(() => {
+    const currentAvatar = feedData[avatarIndex];
+    const currentImage = currentAvatar.features[imgIndex];
+
+    renderImage(currentImage);
+    imgIndex++;
+
+    if (imgIndex >= 3) {
+      imgIndex = 0;
+      avatarIndex++; //Next data
+    }
+
+    if (avatarIndex >= 3) {
+      clearInterval(interval);
+    }
+  }, 1500);
+}
+
+handleTimer();
+```

@@ -1,22 +1,30 @@
+import { feedData } from "./data.js";
+
+function renderImage(image) {
+  let html = `<img src="./images/${image.imageUrl}" alt="${image.alt}" class="feature-image">`;
+  console.log(html);
+}
+
 function handleTimer() {
-  let avatarIndex = 0; /* Index of the current avatar */
-  let imgIndex = 0; /* Index of the current image */
+  let avatarIndex = 0;
+  let imgIndex = 0;
 
   const interval = setInterval(() => {
-    console.log(imgIndex);
-    console.log("AvatarIndex - " + avatarIndex);
+    const currentAvatar = feedData[avatarIndex];
+    const currentImage = currentAvatar.features[imgIndex];
 
+    renderImage(currentImage);
     imgIndex++;
 
     if (imgIndex >= 3) {
-      imgIndex = 0; /* Reset the image index */
-      avatarIndex++; /* Move the next avatar */
+      imgIndex = 0;
+      avatarIndex++; //Next data
     }
 
-    if (avatarIndex >= 10) {
+    if (avatarIndex >= 3) {
       clearInterval(interval);
     }
-  }, 1500); /* Change the image every 1.5s */
+  }, 1500);
 }
 
 handleTimer();
