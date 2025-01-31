@@ -14,6 +14,31 @@ But not all of your contacts are on your Christmas list. So your task is this:
 1. Ensure that the label does not get two of the same icon.
 2. Create your own CSS Christmas logo to add a personal touch to each label.
 
+
+```js
+export const addresses = [
+  {
+    name: "Holly Berry",
+    "address line 1": "12 Snowflake Lane",
+    town: "Winterville",
+    state: "WV",
+    country: "USA",
+    relation: "Friend",
+    isOnChristmasList: true,
+  },
+  {
+    name: "Chris T. Mas",
+    "address line 1": "25 Mistletoe Ave",
+    town: "Festive Town",
+    state: "FT",
+    country: "USA",
+    relation: "Uncle",
+    isOnChristmasList: false,
+  },
+```
+
+
+
 ```js
 const labelsContainer = document.querySelector(".labels-container");
 
