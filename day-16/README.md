@@ -53,15 +53,25 @@ console.log(newArray);
 //     name: "Elf Herbert Drinklater",
 //     totalShipped: { Puzzle: 15, Blocks: 20 },
 //   },
-//   {
-//     name: "Elf Kalvin Armadillo",
-//     totalShipped: { Drone: 1, Robot: 10 },
-//   },
-//   {
-//     name: "Elf Ernest Tinkerer",
-//     totalShipped: { "Board Game": 3, Doll: 18 },
-//   },
 // ];
+```
+
+## Hint
+
+```js
+toysShipped: {  //<----Level 1 == Object
+  NorthPole: {    //<----Level 2 == Object
+    MainWarehouse: [  //<----Level 3 == Array
+      { toy: "Teddy Bear", count: 3 },
+      { toy: "Race Car", count: 5 },
+    ],
+    Overflow: [{ toy: "Teddy Bear", count: 2 }],
+  },
+  Europe: {
+    Germany: [{ toy: "Teddy Bear", count: 5 }],
+    France: [{ toy: "Doll", count: 7 }],
+  },
+},
 ```
 
 ## Reference

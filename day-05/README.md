@@ -12,37 +12,60 @@ and filter out any pairs that aren’t actually anagrams.
 For this challenge, spaces will be ignored, so "Be The Helm" would
 be considered a valid anagram of "Bethlehem".
 
+## What is anagram?
+
+An anagram is a word or phrase formed by rearranging the letters of another word or phrase.
+Here's an example:
+
+- Original phrase: "Astronomer"
+- Anagram: "Moon starer"
+
 ## Solution
 
-```js
-function findAnagrams(array) {
-  // write your code here
-  const formatted = anagrams.map((data) => {
-    data[0] = data[0]
-      .split(" ")
-      .join("")
-      .toLowerCase()
-      .split("")
-      .sort()
-      .join("");
-    data[1] = data[1]
-      .split(" ")
-      .join("")
-      .toLowerCase()
-      .split("")
-      .sort()
-      .join("");
-    return data;
-  });
+[index.js](index.js)
 
-  const output = formatted.reduce((acc, data) => {
-    const [str1, str2] = data;
-    if (str1 === str2) acc.push(data);
-    return acc;
-  }, []);
-  return output;
-}
-//[['aaaclnsstu', 'aaaclnsstu'], ['dddeeeeeefhilnnoorrrrstu', 'dddeeeeeefhilnnoorrrrstu'], ['acegilnorrss', 'acegilnorrss']]
+## Quiz
+
+**Q1**
+
+```js
+let anagrams = [
+  ["Can Assault", "Santa Claus"],
+  ["Refreshed Erudite Londoner", "Rudolf the Red Nose Reindeer"],
+  ["Frosty The Snowman", "Honesty Warms Front"],
+  ["Drastic Charms", "Christmas Cards"],
+  ["Congress Liar", "Carol Singers"],
+  ["The Tin Glints", "Silent Night"],
+  ["Be The Helm", "Betlehem"],
+  ["Is Car Thieves", "Christmas Eve"],
+];
+```
+
+**Q1-Answer**
+
+```js
+const findAnagrams = (array) => {
+  const output = [];
+
+  array.forEach((data, index) => {
+    const v1 = data[0]
+      .replace(/\s+/g, "")
+      .toLowerCase()
+      .split("")
+      .sort()
+      .join("");
+    const v2 = data[1]
+      .replace(/\s+/g, "")
+      .toLowerCase()
+      .split("")
+      .sort()
+      .join("");
+    if (v1 === v2) {
+      output.push(data);
+    }
+  });
+  console.log(output);
+};
 ```
 
 ## HINT
@@ -55,15 +78,12 @@ function findAnagrams(array) {
 (a<b) return -1 // acending order
 (a<b) return 1 // decending order
 ```
+
 - [MDN - Array.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 
 ```js
 const array1 = [1, 30, 4, 21, 100000];
-array1.sort((a, b) => a-b);
+array1.sort((a, b) => a - b);
 console.log(array1);
 //Array [1, 4, 21, 30, 100000]
 ```
-
-
-
-

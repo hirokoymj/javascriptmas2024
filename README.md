@@ -29,4 +29,5 @@
 ## Web server for Express.js
 
 - [Express.js - serving static files](https://expressjs.com/en/starter/static-files.html)
+- Run Express server - Go to terminal -> `node app.js`
 - http://localhost:3000/day01/

@@ -45,35 +45,29 @@ console.log(months); // Array ["Jan", "March", "June"]
 
 **Q1**
 
-- Display emoji selected at random from the array in data.js.
-- The emoji (🌇 💣 👮 ✈️ ️🔫) should print in console in five times.
-  ```js
-  //Genearte a random number
-  Math.floor(Math.random * files.length);
-  // Remove an item from array
-  films.splice(randomIndex, 1);
-  ```
+- Display emoji (🌇 💣 👮 ✈️ ️🔫) selected at random every 2 seconds from data.js.
+- The emoji should print in console. If there is no file, display "Game over!".
 
 **Q1-Answer**
 
 ```js
+import { films } from "./data.js";
+
 const copyFilms = [...films];
 
 const renderRandomEmoji = () => {
+  if (copyFilms.length === 0) {
+    console.log("Game over");
+    clearInterval(interval);
+    return;
+  }
   const randomIndex = Math.floor(Math.random() * copyFilms.length);
-
-  const emoji = copyFilms[randomIndex].emoji.join(" ");
+  const removedItemArr = copyFilms.splice(randomIndex, 1);
+  const emoji = removedItemArr[0].emoji.join(" ");
   console.log(emoji);
-  const removedItem = copyFilms.splice(randomIndex, 1);
 };
 
-let count = 0;
 const interval = setInterval(() => {
   renderRandomEmoji();
-  count++;
-
-  if (count === 0) {
-    clearInterval(interval);
-  }
-}, 1500);
+}, 2000);
 ```

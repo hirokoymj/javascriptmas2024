@@ -66,3 +66,23 @@ export const films = [
     id: "11",
   },
 ];
+
+// const copyFilms = [...films];
+
+// const renderRandomEmoji = () => {
+//   const randomIndex = Math.floor(Math.random() * copyFilms.length);
+
+//   const emoji = copyFilms[randomIndex].emoji.join(" ");
+//   console.log(emoji);
+//   const removedItem = copyFilms.splice(randomIndex, 1);
+// };
+
+// let count = 0;
+// const interval = setInterval(() => {
+//   renderRandomEmoji();
+//   count++;
+
+//   if (count === 0) {
+//     clearInterval(interval);
+//   }
+// }, 1500);

@@ -23,6 +23,10 @@ Expected Output: ['James', 'Yi', 'Florinda', 'Fatima', 'Tariq', 'Jose', 'Clare',
 
 ## Solution #1
 
+[index.js](index.js)
+
+## Quiz
+
 ```js
 const santasArr = [
   "James",
@@ -36,36 +40,16 @@ const santasArr = [
 ];
 const missingNamesArr = ["Florinda", "Jose", "Gibbs"];
 
-let indexArr = []; ///2, 5, 7
-const result = santasArr.filter((data, index) => {
-  if (data === "Grinch") indexArr.push(index);
-});
-
-for (let i = 0; i < indexArr.length; i++) {
-  santasArr.splice(indexArr[i], 1, missingNamesArr[i]);
-}
-```
-
-## Solution #2
-
-```js
-santasArr = [
-  "James",
-  "Yi",
-  "Grinch",
-  "Fatima",
-  "Tariq",
-  "Grinch",
-  "Clare",
-  "Grinch",
-];
-missingNamesArr = ["Florinda", "Jose", "Gibbs"];
-
-santasArr.forEach((name, index) => {
+const output = santasArr.map((name) => {
   if (name === "Grinch") {
-    santasArr[index] = missingNamesArr.shift();
+    name = missingNamesArr.shift();
+    return name;
   }
+  return name;
 });
+
+console.log(output);
+//["James", "Yi", "Florinda", "Fatima", "Tariq", "Jose", "Clare", "Gibbs"];
 ```
 
 ## Reference

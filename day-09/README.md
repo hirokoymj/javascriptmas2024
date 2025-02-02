@@ -107,8 +107,7 @@ console.log(result); //false
 
 **Q1:**
 
-1. Contains at least one ingredient Alice likes
-2. Contains zero ingredients that Alice dislikes
+- Contains at least one ingredient Alice likes
 
 ```js
 const guest = {
@@ -119,12 +118,12 @@ const guest = {
 const recipes = [
   {
     name: "Honey-Glazed Ham",
-    ingredients: ["pork", "avocado", "brown sugar", "kale", "butter"],
+    ingredients: ["pork", "banana", "brown sugar", "kale", "butter"],
   },
 ];
+
 const suitableRecipes = recipes.filter((recipe) => {
   // Check if the recipe contains at least one favorite ingredient
-  // Check if the recipe contains any disliked ingredients
   // Return true if it contains at least one favorite and no dislikes
 });
 ```

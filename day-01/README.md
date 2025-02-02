@@ -88,3 +88,7 @@ const newstr = str.trim().replace(/\s+/g, " ");
 console.log(str);
 console.log(`newstr: ${newstr}`); // talking picture frames.
 ```
+
+## Screenshot
+
+![](./screenshot.png)S

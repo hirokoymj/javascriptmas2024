@@ -12,19 +12,15 @@ const hackedEmojis = {
 };
 
 const findEmoji = (str) => {
-  let output = "";
   if (str.startsWith(":") && str.endsWith(":")) {
     const formatted = str.slice(1, -1);
-
     for (const key in hackedEmojis) {
       if (key === formatted) {
-        output = hackedEmojis[key];
+        return hackedEmojis[key];
       }
     }
-  } else {
-    output = str;
   }
-  return output;
+  return str;
 };
 
 console.log(findEmoji(":cry:"));
