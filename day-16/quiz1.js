@@ -22,6 +22,8 @@ const workshopData = [
   },
 ];
 
+///{ 'Teddy Bear': 10, 'Race Car': 5, Doll: 7 }
+
 const newArray = workshopData.map((data) => {
   const result = Object.values(data.toysShipped).reduce((acc, region) => {
     Object.values(region).forEach((location) => {
