@@ -4,7 +4,7 @@
 
 <hr />
 
-- [Day 1 - Grampa's Wishlist](./public/day01/README.md)
+- [Day 1 - Grampa's Wishlist](./day-01/README.md)
 - Day 2 - Ugly Advent Calendar
 - [Day 3 - Santa's Hacked Emoji](./day-03/README.md)
 - [Day 4 - Xmas Movie Emoji Quiz](./day-04/README.md)
@@ -17,7 +17,7 @@
 - [Day 11 - Xmas Matching Game](./day-13/README.md)
 - [Day 13 - Santas Change!](./day-13/README.md)
 - [Day 14 - Build Norhgram](./day-14/)
-- Day 15 - JIngle Bills
+- Day 15 - Jingle Bills
 - [Day 16 - Find the Naughty Elf](./day-16/README.md)
 - [Day 18 - The cost of xmas](./day-18/README.md)
 - [Day 19 - Holiday Gift Shopping](./day-19/README.md)
