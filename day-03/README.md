@@ -26,14 +26,17 @@ const hackedEmojis = {
 
 [index.js](./index.js)
 
-## Resources
+## Hint
+- There is NO way to stop or break forEach. So to itelate hackedEmojis object to find matched emoji key, use for in. 
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 
-- [String.slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [String.startsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith)
-- [String.endsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
-- [Object.hasOwnProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
-- [in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in)
-- [Using slice() with negative indexes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice#using_slice_to_create_a_new_string)
+```
+There is no way to stop or break a forEach() loop other than by throwing an exception. If you need such behavior, the forEach() method is the wrong tool.
+
+Early termination may be accomplished with looping statements like for, for...of, and for...in. Array methods like every(), some(), find(), and findIndex() also stops iteration immediately when further iteration is not necessary.
+```
+
+
 
   ```js
   const str = "The morning is upon us.";
