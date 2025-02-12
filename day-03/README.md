@@ -27,7 +27,7 @@ const hackedEmojis = {
 [index.js](./index.js)
 
 ## Hint
-- There is <b>NO way</b> to stop or break forEach. To itelate <i>hackedEmojis</i> object to find matched emoji key, use for in. 
+- There is <b>NO way</b> to stop or break forEach. To itelate <i>hackedEmojis</i> object to find an emoji key, use <b>for in</b>. 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 
 <blockquote>
