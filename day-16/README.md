@@ -148,6 +148,4 @@ const result = workshopData.map((data) => {
 
 - https://github.com/mendezpvi/javascriptmas-2024
 
-```
 
-```

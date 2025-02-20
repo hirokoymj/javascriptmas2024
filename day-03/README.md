@@ -26,13 +26,36 @@ const hackedEmojis = {
 
 [index.js](./index.js)
 
+## Hint
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+- There is no way to **stop** or break a `forEach()` loop other than by throwing an exception. If you need such behavior, the `forEach()` method is the wrong tool.
+- Early termination may be accomplished with looping statements like for, `for...of`, and `for...in`. Array methods like `every()`, `some()`, `find()`, and `findIndex()` also **stops** iteration immediately when further iteration is not necessary.
+
+**Example**
+
+- Check if the hackedEmojis object has a "cry" key and, if so, return its value.
+
+```js
+const hackedEmojis = {
+  angry: "🎁", // 😠
+  thumbsdown: "👏", // 👎
+  man_facepalming: "🎅", // 🤦‍♂️
+  cry: "‍😄", // 😭
+  puke: "🤩", // 🤮
+};
+const key = "cry";
+
+//Use a for...in loop instead of forEach to allow early exit when the key is found.
+for (const key in hackedEmojis) {
+  if (key === emojiKey) return hackedEmojis[key];
+}
+```
+
 ## Resources
 
 - [String.slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [String.startsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith)
-- [String.endsWith](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
 - [Object.hasOwnProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
-- [in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in)
 - [Using slice() with negative indexes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice#using_slice_to_create_a_new_string)
 
   ```js
