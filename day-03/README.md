@@ -146,3 +146,6 @@ const emojifyWord2 = (word) => {
 
 console.log(emojifyWord2(":angry:"));
 ```
+
+## History
+2/21/20205 - 15 mins
