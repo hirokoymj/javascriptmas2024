@@ -41,11 +41,16 @@ console.log(removed); // Array ["April"]
 console.log(months); // Array ["Jan", "March", "June"]
 ```
 
-
 ## The "this" problem
 
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout#the_this_problem
-> When you pass a method to setTimeout(), it will be invoked with a this value that may differ from your expectation. The general issue is explained in detail in the JavaScript reference.
+  > When you pass a method to setTimeout(), it will be invoked with a this value that may differ from your expectation. The general issue is explained in detail in the JavaScript reference.
+
+## Callbacks
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#callbacks
+
+> When a function is passed as a callback, the value of this depends on how the callback is called, which is determined by the implementor of the API. Callbacks are typically called with a this value of undefined (calling it directly without attaching it to any object), which means if the function is non–strict, the value of this is the global object (globalThis).
 
 ## Solution
 
@@ -59,18 +64,10 @@ setTimeout(() => {
 }, 1000); // prints "zero,one,two" after 2 seconds
 ```
 
-
-
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#callbacks
 
 > Callbacks
 > When a function is passed as a callback, the value of this depends on how the callback is called, which is determined by the implementor of the API. Callbacks are typically called with a this value of undefined (calling it directly without attaching it to any object), which means if the function is non–strict, the value of this is the global object (globalThis).
-
-
-
-
-
-
 
 ## Quiz
 
