@@ -147,5 +147,3 @@ const result = workshopData.map((data) => {
 ## Reference
 
 - https://github.com/mendezpvi/javascriptmas-2024
-
-

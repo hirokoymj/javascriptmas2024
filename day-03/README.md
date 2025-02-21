@@ -52,27 +52,6 @@ for (const key in hackedEmojis) {
 }
 ```
 
-## Resources
-
-- [String.slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [Object.hasOwnProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
-- [Using slice() with negative indexes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice#using_slice_to_create_a_new_string)
-
-  ```js
-  const str = "The morning is upon us.";
-  const s1 = str.slice(-3);
-  const s11 = str.slice(-4);
-  const s3 = str.slice(0, -1);
-
-  console.log(s1);
-  console.log(s11);
-  console.log(s3);
-
-  // "us."
-  // " us."
-  // "The morning is upon us"
-  ```
-
 ## Quiz
 
 **Q1**
@@ -146,3 +125,24 @@ const emojifyWord2 = (word) => {
 
 console.log(emojifyWord2(":angry:"));
 ```
+
+## Resources
+
+- [String.slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [Object.hasOwnProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
+- [Using slice() with negative indexes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice#using_slice_to_create_a_new_string)
+
+  ```js
+  const str = "The morning is upon us.";
+  const s1 = str.slice(-3);
+  const s11 = str.slice(-4);
+  const s3 = str.slice(0, -1);
+
+  console.log(s1);
+  console.log(s11);
+  console.log(s3);
+
+  // "us."
+  // " us."
+  // "The morning is upon us"
+  ```
