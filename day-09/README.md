@@ -67,21 +67,20 @@ const recipes = [
 - [Array.some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
 - [Array.includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
 - [Array.filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-- https://stackoverflow.com/questions/64946404/when-use-js-includes-vs-some
 
 ```js
-Array.some(callbackFn);
-Array.includes(searchElement);
-Array.filter(callbackFn);
+Array.some(callback); // returns true or false
+Array.includes(value); // returns true or false
+Array.filter(callback); // returns Array or empty array
 ```
 
 - **some** takes in a callback function where you can write your own logic to determine if an array contains some element which matches the conditions you wrote.
 - The some() method of Array instances tests whether **at least one** element in the array passes the condition. It returns `true`.
 - **includes** does a generic `equalTo` comparison on every element and will return true if at least one element in the array is equal to the value to find.
 
-## Checking whether a value exists in an array
+## Example
 
-**Example 1 - some() - whether at least one element finds in an array**
+- Check if at least one element finds in an array
 
 ```js
 const guest = { loves: "banana" };
