@@ -84,23 +84,19 @@ Array.filter(callbackFn);
 **Example 1 - some() - whether at least one element finds in an array**
 
 ```js
-const fruits = ["apple", "banana", "mango", "guava"];
 const guest = { loves: "banana" };
-
-const result = fruits.some((data) => {
-  return data === guest.loves;
-});
-console.log(result); // true
+const hasLoved = ["apple", "banana", "mango", "guava"].some(
+  (data) => data === guest.loves
+);
+console.log(hasLoved); // true
 ```
 
 ```js
-const fruits = ["apple", "banana", "mango", "guava"];
-const guest = { loves: "kale" };
-
-const result = fruits.some((data) => {
-  return data === guest.loves;
-});
-console.log(result); //false
+const guest = { dislike: ["kale", "tomato", "kiwi"] };
+const hasDisliked = ["apple", "banana", "mango", "guava"].some((data) =>
+  guest.dislike.includes(data)
+);
+console.log(hasDisliked); //false
 ```
 
 <hr />
@@ -122,34 +118,20 @@ const recipes = [
   },
 ];
 
-const suitableRecipes = recipes.filter((recipe) => {
-  // Check if the recipe contains at least one favorite ingredient
-  // Return true if it contains at least one favorite and no dislikes
-});
+const suitableRecipes = recipes.filter((recipe) => {});
 ```
 
 **Q1 - Answer:**
 
 ```js
 const suitableRecipes = recipes.filter((recipe) => {
-  const hasLovedIngredient = recipe.ingredients.some((ingredient) => {
-    const result = guest.loves.includes(ingredient);
-    console.log(result);
-    return result;
-  });
+  const hasLovedIngredient = recipe.ingredients.some((ingredient) => guest.loves.includes(ingredient););
   return hasLovedIngredient;
 });
 
 console.log(suitableRecipes);
-
-// false
-// false
-// false
-// true
-// [
-//   {
-//     name: 'Honey-Glazed Ham',
-//     ingredients: [ 'pork', 'banana', 'brown sugar', 'kale', 'butter' ]
-//   }
-// ]
 ```
+
+## history
+
+02/22, 02/23
