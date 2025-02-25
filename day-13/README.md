@@ -55,3 +55,18 @@ Your goal will be to return true if everyone gets their correct change, and fals
   // "b: 2"
   // "c: 3"
   ```
+
+
+
+Subject: Residential History Request - Hiroko Yamaji, 3729 Westwood Blvd.
+
+Dear Miller & Desatnik Management,
+
+I need a residential history document for 3729 Westwood Blvd. (8 years). I'm moving to Dallas, TX from Japan and require this for U.S. residency proof.
+Please see the attached my refund form issued by MDM, which includes my address, moved-in and moved-out date. I appreciate it if you could email the document, instead of mailing.
+
+Thank you in advance for your help.
+
+Hiroko Yamaji
+
+
