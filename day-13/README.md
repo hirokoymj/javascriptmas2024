@@ -74,7 +74,7 @@ switch (foo) {
 }
 ```
 
-## for of vs for in
+## `for...of` vs `for...in`
 
 - [MDN - for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
 - [MDN - for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
