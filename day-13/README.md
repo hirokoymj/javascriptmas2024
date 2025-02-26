@@ -105,7 +105,10 @@ for (const key in object) {
 }
 ```
 
-## logic
+## Return
+
+- [MDN return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)
+- The return statement **ends** function execution and specifies a value to be returned to the function caller.
 
 ```js
 function correctChangeFromSanta(bills) {
@@ -116,12 +119,12 @@ function correctChangeFromSanta(bills) {
   for (let bill of bills) {
     switch (bill) {
       case 5:
-        return false; //Exits for...of loop and returns "false", which is the result of this function.
+        return false; //Ends this function and return "false".
       case 10:
       case 20:
     }
   }
-  return true; // Returns "true" if there is no false returns in the switch condition.
+  return true; // /Ends this function and return "true".
 }
 ```
 
