@@ -14,7 +14,6 @@ But not all of your contacts are on your Christmas list. So your task is this:
 1. Ensure that the label does not get two of the same icon.
 2. Create your own CSS Christmas logo to add a personal touch to each label.
 
-
 ```js
 export const addresses = [
   {
@@ -36,8 +35,6 @@ export const addresses = [
     isOnChristmasList: false,
   },
 ```
-
-
 
 ```js
 const labelsContainer = document.querySelector(".labels-container");
@@ -85,3 +82,7 @@ console.log(elements.join());
 console.log(elements.join(""));
 // Expected output: "FireAirWater"
 ```
+
+## History
+
+03/28/2025
