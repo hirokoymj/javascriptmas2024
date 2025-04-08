@@ -1,8 +1,3 @@
-/**
-- Output ":cry:" to "cry".
-- const str = ":cry:";
- */
-
 const hackedEmojis = {
   angry: "🎁", // 😠
   thumbsdown: "👏", // 👎
@@ -13,17 +8,12 @@ const hackedEmojis = {
 
 const findEmoji = (str) => {
   if (str.startsWith(":") && str.endsWith(":")) {
-    const formatted = str.slice(1, -1);
-    Object.keys(hackedEmojis).forEach((key) => {
-      if (key === formatted) {
-        console.log(hackedEmojis[key]);
-        return hackedEmojis[key];
-      }
-    });
-    return found;
-  } else {
-    return str;
+    const emoji = str.slice(1, -1);
+    for (const key in hackedEmojis) {
+      if (emoji === key) return hackedEmojis[key];
+    }
   }
+  return str;
 };
 
 console.log(findEmoji(":cry:"));

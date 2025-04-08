@@ -128,4 +128,6 @@ console.log(emojifyWord2(":angry:"));
 
 ## History
 
-2/21/20205 - 15 mins
+- 2/21/20205 - 15 mins
+- 4/3/2025 - 30 mins, for..in is early exit, forEach not stop in the middle.
+- 04/07/2025
