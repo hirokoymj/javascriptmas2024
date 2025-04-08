@@ -13,12 +13,11 @@ const missingNamesArr = ["Florinda", "Jose", "Gibbs"];
 
 // Expected Output: ['James', 'Yi', 'Florinda', 'Fatima', 'Tariq', 'Jose', 'Clare', 'Gibbs']
 
-const output = santasArr.map((name) => {
-  if (name === "Grinch") {
-    name = missingNamesArr.shift();
-    return name;
+const output = santasArr.map((santa) => {
+  if (santa === "Grinch") {
+    return missingNamesArr.shift();
   }
-  return name;
+  return santa;
 });
 
 console.log(output);
