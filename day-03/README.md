@@ -126,8 +126,24 @@ const emojifyWord2 = (word) => {
 console.log(emojifyWord2(":angry:"));
 ```
 
+<hr />
+
+**Q3**
+
+What is the difference between str.split() and str.splice()?
+
+**Q3: answer**
+
+- str.split() -> Dividing -> returns <b>an array</b>.
+- str.splice() -> Extracting - returns <b>a new string</b>.
+
+- [MDN string.split](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+- [MDN string.slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+
+<hr />
+
 ## History
 
 - 2/21/20205 - 15 mins
 - 4/3/2025 - 30 mins, for..in is early exit, forEach not stop in the middle.
-- 04/07/2025
+- 04/07/2025, 04/14/2025
