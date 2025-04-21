@@ -100,6 +100,28 @@ const interval = setInterval(() => {
 }, 2000);
 ```
 
+<hr />
+
+**Q2**
+How to stop setInterval()?
+
+**Q2: answer**
+clearInterval()
+
+<hr />
+
+**Q3**
+
+- What is different between array.slice() and array.splice()?
+
+**Q3:answer**
+
+- array.slice() -> extracting, returns a new array.
+- array.splice() -> removing and adding, modify an original array.
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+
 ## History
 
 - 02/21/2025
+- 04/17/2025
