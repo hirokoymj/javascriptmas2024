@@ -68,22 +68,59 @@ const findAnagrams = (array) => {
 };
 ```
 
-## HINT
+<hr />
+
+**Q2**
+
+1. Iteration every elements => no way to stop
+2. Early termination == stop iteration on the way
+
+**Q2:answer**
+
+1. map, forEach
+2. for..., every(), some(), find()
+
+<hr />
+
+**Q3**
+
+- sort() - accending order
+- sort() - decending order
+
+**Q3:answer**
 
 - [Array.sort](https://github.com/hirokoymj/JavaScript/tree/master/Array/Array-Sort)
-- Accending order - return `-1`
-- Decending orer - return `1`
 
 ```js
 (a<b) return -1 // acending order
 (a<b) return 1 // decending order
 ```
 
-- [MDN - Array.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+**Q4**
+
+- Sort months array by the correct monthly order.
 
 ```js
-const array1 = [1, 30, 4, 21, 100000];
-array1.sort((a, b) => a - b);
-console.log(array1);
-//Array [1, 4, 21, 30, 100000]
+const months = ["March", "Jan", "Feb", "Dec"];
+const monthList = [
+  "Jan",
+  "Feb",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+```
+
+**Q4: answer**
+
+```js
+months.sort((a, b) => (monthList.indexOf(a) < monthList.indexOf(b) ? -1 : 1));
+console.log(months); //[ 'Jan', 'Feb', 'March', 'Dec' ]
 ```

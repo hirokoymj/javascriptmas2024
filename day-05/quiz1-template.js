@@ -10,5 +10,26 @@ let anagrams = [
 ];
 
 const findAnagrams = (array) => {};
-
+// // itelate all element -> map, forEach
+// // eary exit -> for, some, find, filter,
+// //sort(a, b)
 findAnagrams(anagrams);
+
+const months = ["March", "Jan", "Feb", "Dec"];
+const monthList = [
+  "Jan",
+  "Feb",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+months.sort((a, b) => (monthList.indexOf(a) < monthList.indexOf(b) ? -1 : 1));
+
+console.log(months);
