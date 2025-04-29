@@ -73,12 +73,20 @@ const findAnagrams = (array) => {
 **Q2**
 
 1. Iteration every elements => no way to stop
-2. Early termination == stop iteration on the way
+2. Early termination
 
 **Q2:answer**
 
 1. map, forEach
-2. for..., every(), some(), find()
+2. for, every(), some(), find()
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach#description
+
+<p>There is no way to stop or break a forEach() loop </p>
+
+<p>Unlike map(), forEach() always returns undefined and is not chainable. </p>
+
+<p>Early termination may be accomplished with looping statements like for, for...of, and for...in. Array methods like every(), some(), find(), and findIndex() also stops iteration immediately when further iteration is not necessary.</p>
 
 <hr />
 
@@ -94,11 +102,21 @@ const findAnagrams = (array) => {
 ```js
 (a<b) return -1 // acending order
 (a<b) return 1 // decending order
+
+sort((a, b) => a < b ? -1: 1)
+sort((a, b) => a < b ? 1: -1)
+
 ```
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#parameters
+- To memorize this, remember that (a, b) => a - b sorts numbers in ascending order.
+- If omitted, the array elements are converted to strings, then sorted according to each character's Unicode code point value.
+
+<hr />
 
 **Q4**
 
-- Sort months array by the correct monthly order.
+- Sort the months array by the correct monthly sequence.
 
 ```js
 const months = ["March", "Jan", "Feb", "Dec"];
@@ -124,3 +142,7 @@ const monthList = [
 months.sort((a, b) => (monthList.indexOf(a) < monthList.indexOf(b) ? -1 : 1));
 console.log(months); //[ 'Jan', 'Feb', 'March', 'Dec' ]
 ```
+
+## History
+
+- 04/28/2025

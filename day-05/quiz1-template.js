@@ -30,5 +30,4 @@ const monthList = [
   "Nov",
   "Dec",
 ];
-months.sort((a, b) => (monthList.indexOf(a) < monthList.indexOf(b) ? -1 : 1));
 console.log(months); //[ 'Jan', 'Feb', 'March', 'Dec' ]
