@@ -1,18 +1,20 @@
-import { renderKeyboard } from "./keyboard.js";
+const array = ["a", "b", "c", "d"];
 
-const guessContainer = document.getElementById("guess-container");
+if (array.length > 0) {
+  const removedIndex = Math.floor(Math.random() * array.length);
+  const removedItem = array.splice(removedIndex, 1);
+  console.log(removedItem[0]);
+}
 
-const word = "gift";
-let guesses = 6;
+const interval = setInterval(() => {
+  const removedIndex = Math.floor(Math.random() * array.length);
+  const removedItem = array.splice(removedIndex, 1);
+  console.log(removedItem[0]);
+}, 2000);
 
-document
-  .getElementById("keyboard-container")
-  .addEventListener("click", checkGuess);
-renderKeyboard();
-
-///Q1
-//- At the start of the game, a player can see a number of dashes, with a dash for each letter of the word. So if the word was TREE the player would see - - - -.
-
-const dashLetters = word.split.map((d) => "-").join(" ");
-console.log(dashLetters);
-guessContainer.textContent = dashLetters;
+/* <img class="snowman-part body" src="./assets/images/body.png" alt="snowman's body">
+<img class="snowman-part head" src="./assets/images/head.png" alt="snowman's head">
+<img class="snowman-part scarf" src="./assets/images/scarf.png" alt="snowman's scarf">
+<img class="snowman-part nose" src="./assets/images/nose.png" alt="snowman's nose">
+<img class="snowman-part arm" src="./assets/images/arm.png" alt="snowman's arm">
+<img class="snowman-part hat" src="./assets/images/hat.png" alt="snowman's hat"> */

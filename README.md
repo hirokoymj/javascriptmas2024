@@ -11,7 +11,7 @@
 - [Day 5 - Find anagrams](./day-05/README.md)
 - Day 6 - Slowglobe Animation
 - [Day 7 - GiftChain](./day-07/README.md)
-- [Day 8 - Save the Snowman!](./day-07/README.md)
+- [Day 8 - Save the Snowman!](./day-08/README.md)
 - [Day 9 - Grampa's Recipes](./day-09/README.md)
 - Day 10 - Xmas Flag in CSS
 - [Day 11 - Xmas Matching Game](./day-13/README.md)
@@ -26,8 +26,10 @@
 - [Day 22 - Xmas Label Maker](./day-22/README.md)
 - [Day 23 - Santa got hacked!](./day-23/README.md)
 
-## Web server for Express.js
+## Run a JavaScriptmas quiz in my local.
+
+1. Copy day-xx folder in public holder
+2. Run Express server - Go to terminal -> `node app.js`
+3. Go to http://localhost:3000/day01/
 
 - [Express.js - serving static files](https://expressjs.com/en/starter/static-files.html)
-- Run Express server - Go to terminal -> `node app.js`
-- http://localhost:3000/day01/
