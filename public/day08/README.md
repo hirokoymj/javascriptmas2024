@@ -114,9 +114,15 @@ function checkGuess(e) {
 **Q4:answer**
 
 ```js
+const snowmanParts = document.querySelectorAll(".snowman-part");
+const removedPart = () =>{
   const removedIndex = Math.floor(Math.random() * snowmanParts.length);
   const removed = snowmanParts.splice(removedIndex, 1)[0];
   removed.style.visibility = "hidden";
+}
+removedPart();
+removedPart();
+removedPart();
 ```
 
 <hr />
