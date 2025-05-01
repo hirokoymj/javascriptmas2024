@@ -47,7 +47,7 @@ guessContainer.textContent = guessedLetters.join(" ");
 **Q2**
 
 - HTML DOM
-- Add click event lister for keyboard-container HTML element.
+- Add a click event lister for the `keyboard-container` element.
 
 ```js
 <div id="keyboard-container">
@@ -66,7 +66,7 @@ document.getElementById("keyboard-container").addEventListener("click", checkGue
 
 **Q3**
 
-- Implement checkGuess function.
+- Complete the `checkGuess` function in the `addEventListener`.
 - If that letter is in the word, that letter replaces the dash in the corresponding position. For the word "TREE", if the player has selected the letter E, they will see --EE.
   
 
@@ -98,7 +98,7 @@ function checkGuess(e) {
 
 **Q4:**
 
-- Hide one of `snowman-part` elements when clicking the letter button.
+- When you click the letter button, hide the `snowman-part` elements.
 
 ```js
 <div class="snowman-container">
