@@ -92,13 +92,13 @@ function checkGuess(e) {
       return dashLetters[index];
     });
     guessContainer.textContent = updates.join(" ");
-  } 
+  }
 }
 ```
 
 **Q4:**
 
-- Hide one of `snowman-part` elements when clicked.
+- Hide one of `snowman-part` elements when clicking the letter button.
 
 ```js
 <div class="snowman-container">
@@ -114,16 +114,23 @@ function checkGuess(e) {
 **Q4:answer**
 
 ```js
-const snowmanParts = document.querySelectorAll(".snowman-part");
-const removedPart = () =>{
-  const removedIndex = Math.floor(Math.random() * snowmanParts.length);
-  const removed = snowmanParts.splice(removedIndex, 1)[0];
-  removed.style.visibility = "hidden";
+const snowmanParts = [...document.querySelectorAll('.snowman-part')]
+//const snowmanParts = [...document.getElementsByClassName("snowman-part")];
+const hidden = () => {
+    if (snowmanParts.length > 0) {
+        const removedIndex = Math.floor(Math.random() * snowmanParts.length);
+        console.log(removedIndex)
+        const removedItem = snowmanParts.splice(removedIndex, 1)[0];
+        console.log(removedItem)
+        removedItem.style.visibility = "hidden"
+    }
 }
-removedPart();
-removedPart();
-removedPart();
 ```
+
+- [MDN querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
+  > Returns a static (not live) NodeList
+- [MDN getElementsByClassName](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName)
+  > Returns a live HTMLCollection of found elements.
 
 <hr />
 
@@ -143,9 +150,6 @@ removedPart();
   <img class="snowman-part body" src="images/body.png" alt="snowman's body">
   <img class="snowman-part head" src="images/head.png" alt="snowman's head">
   <img class="snowman-part scarf" src="images/scarf.png" alt="snowman's scarf">
-  <img class="snowman-part nose" src="images/nose.png" alt="snowman's nose">
-  <img class="snowman-part arm" src="images/arm.png" alt="snowman's arm">
-  <img class="snowman-part hat" src="images/hat.png" alt="snowman's hat">
   <img class="puddle" src="images/puddle.png" alt="puddle" />
 </div>
 <div id="guess-container" aria-live="polite"></div>
