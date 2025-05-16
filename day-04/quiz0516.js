@@ -4,16 +4,16 @@ const copyFilms = [...films];
 
 const renderRandomEmoji = () => {
   if (copyFilms.length === 0) {
-    console.log("Game over");
     clearInterval(interval);
-    return;
+    return console.log("Game Over!");
   }
   const randomIndex = Math.floor(Math.random() * copyFilms.length);
-  const removedItemArr = copyFilms.splice(randomIndex, 1);
-  const emoji = removedItemArr[0].emoji.join(" ");
+  const film = copyFilms.splice(randomIndex, 1)[0];
+  const emoji = film.emoji;
   console.log(emoji);
 };
 
+//renderRandomEmoji();
 const interval = setInterval(() => {
   renderRandomEmoji();
 }, 2000);

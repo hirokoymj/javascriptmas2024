@@ -70,22 +70,37 @@ export const toysRequested = [
 ## Solution
 
 ```js
-export const findMostRequestedToy = (toyRequests) => {
-  const toyCounts = toyRequests.reduce((acc, location) => {
-    location.toys.forEach((toy) => {
-      const toyName = Object.keys(toy)[0];
-      acc[toyName] = (acc[toyName] || 0) + toy[toyName];
+export const flattenAndSumToys = (toyRequests) => {
+  return toyRequests.reduce((acc, data) => {
+    data.toys.forEach((toyObj) => {
+      const toyName = Object.keys(toyObj)[0];
+      const amount = toyObj[toyName];
+      const existingToy = acc.find((item) => item.hasOwnProperty(toyName));
+
+      if (existingToy) {
+        existingToy[toyName] += amount;
+      } else {
+        acc.push({ [toyName]: amount });
+      }
     });
     return acc;
-  }, {});
+  }, []);
 };
-findMostRequestedToy(toysRequested);
-// OUTPUT
-//{🚗 cars: 2500, 🪁 kites: 3500, 🎲 board games: 9000, 🎺 trumpets: 2000, 🧩 puzzles: 6500, 🛷 sleds: 2000, 🎨 art kits: 5500, 🔫 water guns: 5000, 🪆 nesting dolls: 4000, 🛹 skateboards: 2500, 🎮 video games: 2000, 🚀 rocket ships: 5000, 🐉 dragon figurines: 5000, 🧙‍♂️ wizard wands: 6500, 🏀 basketballs: 1000, 📚 coloring books: 4000}
 
-output.sort((a, b) => {
-  const toyA = Object.values(a)[0];
-  const toyB = Object.values(b)[0];
-  return toyB - toyA;
-});
+const flattenedToys = flattenAndSumToys(toysRequested);
+console.log(flattenedToys);
+//output
+[
+  { "🚗 cars": 2500 },
+  { "🪁 kites": 3500 },
+  { "🎲 board games": 3000 },
+  { "🎺 trumpets": 1000 },
+  { "🧩 puzzles": 3000 },
+  { "🛷 sleds": 2000 },
+  { "🎨 art kits": 3000 },
+  { "🔫 water guns": 2500 },
+  { "🪆 nesting dolls": 2000 },
+  { "🛹 skateboards": 2500 },
+  { "🎮 video games": 2000 },
+];
 ```

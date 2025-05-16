@@ -8,15 +8,14 @@ const letter = "e";
 // console.log(word[2]);
 // console.log(word[3]);
 
-if (word.includes(letter)) {
-  for (let i = 0; i < word.length; i++) {
-    if (word[i] === letter) guessLetters[i] = letter;
-  }
-}
+// for (let i = 0; i < word.length; i++) {
+//   if (word[i] === letter) {
+//     guessLetters[i] = letter;
+//   }
+// }
 
-if (word.includes(letter)) {
-  guessLetters = guessLetters.map((underscore, index) => {
-    return word[index] === letter ? letter : underscore;
-  });
-}
-console.log(guessLetters); // Output: ["-", "-", "e", "e"]
+const updated = guessLetters.map((data, index) => {
+  return word[index] === letter ? letter : data;
+});
+guessLetters = updated;
+console.log(guessLetters);
