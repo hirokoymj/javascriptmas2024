@@ -8,11 +8,11 @@ const letter = "e";
 // console.log(word[2]);
 // console.log(word[3]);
 
-// if (word.includes(letter)) {
-//   for (let i = 0; i < word.length; i++) {
-//     if (word[i] === letter) guessLetters[i] = letter;
-//   }
-// }
+if (word.includes(letter)) {
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] === letter) guessLetters[i] = letter;
+  }
+}
 
 if (word.includes(letter)) {
   guessLetters = guessLetters.map((underscore, index) => {

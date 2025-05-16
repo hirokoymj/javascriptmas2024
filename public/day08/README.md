@@ -83,8 +83,14 @@ const letter = "e";
 
 **Q3:answer**
 
+- word sting can access `word[0]`, `word[1]`.
+
 ```js
 // Solution #1
+// console.log(word[0]);
+// console.log(word[1]);
+// console.log(word[2]);
+// console.log(word[3]);
 const word = "tree";
 let guessLetters = ["-", "-", "-", "-"];
 const letter = "e";
