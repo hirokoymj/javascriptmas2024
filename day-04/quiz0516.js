@@ -14,7 +14,6 @@ const renderRandomEmoji = () => {
   console.log(emoji);
 };
 
-const interval = setInterval(() => {}, 2000);
-
-//array.slice() - extract and new array
-//array.splice() - remove an item from original
+const interval = setInterval(() => {
+  renderRandomEmoji();
+}, 2000);

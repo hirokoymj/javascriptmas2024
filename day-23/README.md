@@ -25,7 +25,7 @@ Expected Output: ['James', 'Yi', 'Florinda', 'Fatima', 'Tariq', 'Jose', 'Clare',
 
 [index.js](index.js)
 
-## Quiz
+## Quiz (day-23)
 
 ```js
 const santasArr = [

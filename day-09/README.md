@@ -120,6 +120,8 @@ const recipes = [
 const suitableRecipes = recipes.filter((recipe) => {});
 ```
 
+## Quiz (day-9)
+
 **Q1 - Answer:**
 
 ```js

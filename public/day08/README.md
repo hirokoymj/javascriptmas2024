@@ -51,49 +51,62 @@ guessContainer.textContent = guessedLetters.join(" ");
 
 ```js
 <div id="keyboard-container">
-  <button class="letter" aria-label="Guess letter a" id="a">a</button>
-  <button class="letter" aria-label="Guess letter b" id="b">b</button>
+  <button class="letter" aria-label="Guess letter a" id="a">
+    a
+  </button>
+  <button class="letter" aria-label="Guess letter b" id="b">
+    b
+  </button>
 </div>
 ```
 
 **Q2:answer**
 
 ```js
-document.getElementById("keyboard-container").addEventListener("click", checkGuess);
+document
+  .getElementById("keyboard-container")
+  .addEventListener("click", checkGuess);
 ```
 
 <hr />
 
 **Q3**
 
-- Implement checkGuess function.
-- If that letter is in the word, that letter replaces the dash in the corresponding position. For the word "TREE", if the player has selected the letter E, they will see --EE.
-  
+- Replace a guessword to a letter
 
 ```js
 const word = "tree";
-const guessLetters = ["-", "-", "-", "-"]; // E -> ["-", "-", "E", "E"]
-document.getElementById("keyboard-container").addEventListener("click", checkGuess);
-//<button class="letter" aria-label="Guess letter ${letter}" id=${letter}>${letter}</button>
+let guessLetters = ["-", "-", "-", "-"]; // e -> ["-", "-", "E", "E"]
+const letter = "e";
+//console.log(guessLetters); // Output: ["-", "-", "e", "e"]
 ```
 
 **Q3:answer**
 
 ```js
-const word = "TREE";
-const guessLetters = ["-", "-", "-", "-"];
-//
+// Solution #1
+const word = "tree";
+let guessLetters = ["-", "-", "-", "-"];
+const letter = "e";
 
-function checkGuess(e) {
-  let letter = e.target.id; 
-  if (word.includes(letter)) {
-    const updates = word.split("").map((d, index) => {
-      if (d === letter) return (dashLetters[index] = letter);
-      return dashLetters[index];
-    });
-    guessContainer.textContent = updates.join(" ");
+if (word.includes(letter)) {
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] === letter) {
+      guessLetters[i] = letter;
+    }
   }
 }
+console.log(guessLetters); // Output: ["-", "-", "e", "e"]
+
+// Solution #2
+
+if (word.includes(letter)) {
+  guessLetters = guessLetters.map((underscore, index) => {
+    return word[index] === letter ? letter : underscore;
+  });
+}
+
+console.log(guessLetters); // Output: ["-", "-", "e", "e"]
 ```
 
 **Q4:**
@@ -114,17 +127,17 @@ function checkGuess(e) {
 **Q4:answer**
 
 ```js
-const snowmanParts = [...document.querySelectorAll('.snowman-part')]
+const snowmanParts = [...document.querySelectorAll(".snowman-part")];
 //const snowmanParts = [...document.getElementsByClassName("snowman-part")];
 const hidden = () => {
-    if (snowmanParts.length > 0) {
-        const removedIndex = Math.floor(Math.random() * snowmanParts.length);
-        console.log(removedIndex)
-        const removedItem = snowmanParts.splice(removedIndex, 1)[0];
-        console.log(removedItem)
-        removedItem.style.visibility = "hidden"
-    }
-}
+  if (snowmanParts.length > 0) {
+    const removedIndex = Math.floor(Math.random() * snowmanParts.length);
+    console.log(removedIndex);
+    const removedItem = snowmanParts.splice(removedIndex, 1)[0];
+    console.log(removedItem);
+    removedItem.style.visibility = "hidden";
+  }
+};
 ```
 
 - [MDN querySelectorAll](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
@@ -172,5 +185,7 @@ document.querySelector(".sunglasses").style.visibility = "hidden";
 //5
 document.getElementById("guess-container").textContent = "You Win!";
 document.getElementById("guess-container").innerHTML = "<b>TEST</b>";
-document.getElementById("keyboard-container").addEventListener("click", () => {});
+document
+  .getElementById("keyboard-container")
+  .addEventListener("click", () => {});
 ```

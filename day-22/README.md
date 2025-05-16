@@ -1,4 +1,4 @@
-# Day 21 Xmas Label Maker
+# Day 22 Xmas Label Maker
 
 Writing out labels by hand is a real pain. Luckily, you are so organised that you have all of your contacts saved in an array.
 
