@@ -22,15 +22,21 @@ const workshopData = [
   },
 ];
 
-/*
-Output
-[
-   {
-     name: 'Elf Tiberius III',
-     toysMade: { 'Teddy Bear': 10, 'Race Car': 5, Doll: 7 },
-     toysShipped: { 'Teddy Bear': 10, 'Race Car': 5, Doll: 7 }
-   }
- ]
-*/
-
-const result = workshopData.map((data) => {});
+const result = workshopData.map((data) => {
+  const output = Object.values(data.toysShipped).reduce((acc, region) => {
+    Object.values(region).forEach((location) => {
+      location.forEach((item) => {
+        const key = item.toy;
+        const count = item.count;
+        acc[key] = (acc[key] || 0) + count;
+      });
+    });
+    return acc;
+  }, {});
+  //console.log(output);
+  return {
+    ...data,
+    toysShipped: output,
+  };
+});
+console.log(result);

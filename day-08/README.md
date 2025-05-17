@@ -82,20 +82,33 @@ const letter = "e";
 **Q3:answer**
 
 ```js
-const word = "TREE";
-const guessLetters = ["-", "-", "-", "-"];
-//
+//Solution 1
+const word = "tree";
+let guessLetters = ["-", "-", "-", "-"];
+const letter = "e";
 
-function checkGuess(e) {
-  let letter = e.target.id;
-  if (word.includes(letter)) {
-    const updates = word.split("").map((d, index) => {
-      if (d === letter) return (dashLetters[index] = letter);
-      return dashLetters[index];
-    });
-    guessContainer.textContent = updates.join(" ");
+if (word.includes(letter)) {
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] === letter) {
+      guessLetters[i] = letter;
+    }
   }
 }
+
+console.log(guessLetters); // Output: ["-", "-", "e", "e"]
+
+// Solution 2
+const word = "tree";
+let guessLetters = ["-", "-", "-", "-"];
+const letter = "e";
+
+if (word.includes(letter)) {
+  guessLetters = guessLetters.map((underscore, index) => {
+    return word[index] === letter ? letter : underscore;
+  });
+}
+
+console.log(guessLetters); // Output: ["-", "-", "e", "e"]
 ```
 
 **Q4:**

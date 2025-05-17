@@ -22,18 +22,4 @@ const workshopData = [
   },
 ];
 
-const final = workshopData.map((data) => {
-  const output = Object.values(data.toysShipped).reduce((acc, region) => {
-    Object.values(region).map((country) => {
-      country.forEach((item) => {
-        const temp = {
-          toy: item.toy,
-          count: (acc[item.toy] || 0) + item.count,
-        };
-        acc.push(temp);
-      });
-    });
-    return acc;
-  }, []);
-  console.log(output);
-});
+const final = workshopData.map((data) => {});

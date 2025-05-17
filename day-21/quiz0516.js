@@ -1,5 +1,5 @@
 // most popular toys
-export const toysRequested = [
+const toysRequested = [
   {
     location: "Germany",
     amount: 11000,
@@ -29,46 +29,51 @@ export const toysRequested = [
 ];
 // RESULT
 
-export const flattenAndSumToys = (toyRequests) => {
-  return toyRequests.reduce((acc, data) => {
-    data.toys.forEach((toyObj) => {
-      const toyName = Object.keys(toyObj)[0];
-      const amount = toyObj[toyName];
-      const existingToy = acc.find((item) => item.hasOwnProperty(toyName));
+const flatten = toysRequested.reduce((acc, data) => {
+  data.toys.forEach((toy) => {
+    const toyName = Object.keys(toy)[0];
+    const amount = toy[toyName];
+    const isExist = acc.find((d) => d.hasOwnProperty(toyName));
 
-      if (existingToy) {
-        existingToy[toyName] += amount;
-      } else {
-        acc.push({ [toyName]: amount });
-      }
-    });
-    return acc;
-  }, []);
-};
+    if (isExist) {
+      isExist[toyName] += amount;
+    } else {
+      acc.push({ [toyName]: amount });
+    }
+  });
+  return acc;
+}, []);
+console.log(flatten);
 
-const flattenedToys = flattenAndSumToys(toysRequested);
-console.log(flattenedToys);
+// [
+//   '🚗 cars': 2500,
+//   '🪁 kites': 3500,
+//   '🎲 board games': 3000,
+//   '🎺 trumpets': 1000,
+//   '🧩 puzzles': 3000,
+//   '🛷 sleds': 2000,
+//   '🎨 art kits': 3000,
+//   '🔫 water guns': 2500,
+//   '🪆 nesting dolls': 2000,
+//   '🛹 skateboards': 2500,
+//   '🎮 video games': 2000
+// ]
 
-flattenedToys.sort((a, b) => {
-  const key_a = Object.keys(a)[0];
-  const key_b = Object.keys(b)[0];
-  return a[key_a] < b[key_b] ? 1 : -1;
-});
-console.log(flattenedToys);
-console.log(flattenedToys[0]);
+// export const flattenAndSumToys = (toyRequests) => {
+//   const output = toyRequests.reduce((acc, data) => {
+//     data.toys.forEach((toy) => {
+//       const toyName = Object.keys(toy)[0];
+//       const amount = toy[toyName];
+//       const isExist = acc.find((d) => d.hasOwnProperty(toyName));
 
-/*
-[
-  { '🚗 cars': 2500 },
-  { '🪁 kites': 3500 },
-  { '🎲 board games': 3000 },
-  { '🎺 trumpets': 1000 },
-  { '🧩 puzzles': 3000 },
-  { '🛷 sleds': 2000 },
-  { '🎨 art kits': 3000 },
-  { '🔫 water guns': 2500 },
-  { '🪆 nesting dolls': 2000 },
-  { '🛹 skateboards': 2500 },
-  { '🎮 video games': 2000 }
-]
-*/
+//       if (isExist) {
+//         isExist[toyName] += amount;
+//       } else {
+//         acc.push({ [toyName]: amount });
+//       }
+//     });
+//     return acc;
+//   }, []);
+//   return output;
+// };
+//console.log(flattenAndSumToys(toysRequested));

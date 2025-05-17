@@ -16,10 +16,8 @@ const recipes = [
 ];
 
 const suitableRecipes = recipes.filter((recipe) => {
-  const hasLoved = recipe.ingredients.some((ingredient) =>
-    guest.loves.includes(ingredient)
-  );
-  return !hasLoved;
+  const result = recipe.ingredients.some((data) => guest.loves.includes(data));
+  return result;
 });
 
 console.log(suitableRecipes);
