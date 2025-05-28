@@ -21,5 +21,32 @@ const workshopData = [
     },
   },
 ];
+// [
+//   {
+//     name: "Elf Tiberius III",
+//     totalShipped: { "Teddy Bear": 10, "Race Car": 5, Doll: 7 },
+//   },
+//   {
+//     name: "Elf Herbert Drinklater",
+//     totalShipped: { Puzzle: 15, Blocks: 20 },
+//   },
+// ];
 
-const final = workshopData.map((data) => {});
+const result = workshopData.map((data) => {
+  const output = Object.values(data.toysShipped).reduce((acc, region) => {
+    Object.values(region).forEach((location) => {
+      location.forEach((item) => {
+        const toyName = item.toy;
+        const count = item.count;
+        acc[toyName] = acc[toyName] || 0 + count;
+      });
+    });
+    return acc;
+  }, {});
+  return {
+    ...data,
+    toysShipped: output,
+  };
+});
+
+console.log(result);
