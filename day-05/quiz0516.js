@@ -13,6 +13,7 @@ const monthList = [
   "Nov",
   "Dec",
 ];
+
 months.sort((a, b) => {
   const index_a = monthList.indexOf(a);
   const index_b = monthList.indexOf(b);

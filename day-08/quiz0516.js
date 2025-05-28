@@ -3,16 +3,19 @@ let guessLetters = ["-", "-", "-", "-"]; // e -> ["-", "-", "e", "e"]
 const letter = "e";
 //output: ["-", "-", "e", "e"]
 
-// if (word.includes(letter)) {
-//   for (let i = 0; i < word.length; i++) {
-//     if (word[i] === letter) {
-//       guessLetters[i] = letter;
-//     }
-//   }
-// }
+const convertText = (letter) => {
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] === letter) {
+      guessLetters[i] = letter;
+    }
+  }
+};
+const text = "tree";
+console.log(text[0]);
 
-const updated = guessLetters.map((data, index) =>
-  word[index] === letter ? letter : data
-);
-console.log(updated);
-//console.log(guessLetters);
+// convertText("t");
+// console.log(guessLetters);
+// convertText("e");
+// console.log(guessLetters);
+// convertText("r");
+// console.log(guessLetters);

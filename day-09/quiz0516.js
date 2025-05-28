@@ -14,9 +14,13 @@ const recipes = [
     ingredients: ["oats", "maple syrup", "vanilla extract"],
   },
 ];
-
+//array.some() true/false
+//array.includes(a) true/false
 const suitableRecipes = recipes.filter((recipe) => {
-  const result = recipe.ingredients.some((data) => guest.loves.includes(data));
+  const result = recipe.ingredients.some((ingredient) => {
+    const hasLoved = guest.loves.includes(ingredient);
+    return hasLoved;
+  });
   return result;
 });
 

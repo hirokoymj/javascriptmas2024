@@ -2,6 +2,24 @@
 
 - https://scrimba.com/javascriptmas-c0javascriptmas
 
+```js
+str.slice(1, -1);
+for (let key in obj) {}
+const randomIndex = Math.floor(Math.random() * copyFilms.length);
+const film = copyFilms.splice(randomIndex, 1)[0];
+const interval = setInterval(()=>{},2000)
+clearInterval(interval)
+array.indexOf("Jan") -> -1 or 0,1,2,
+array.sort(a,b) -> -1: 1
+const text = "tree";
+text[0], text[1], text[2]
+for(let i=0; i<text.length; i++){}
+Array.some(callback); // true/false stopped when it's true
+Array.includes(value); // true/false
+Array.filter(callback); // Array/empty array
+Array.reduce((acc, data)=>{}, [])
+```
+
 <hr />
 
 - [Day 1 - Grampa's Wishlist](./day-01/README.md)
